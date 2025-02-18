@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+        </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Dancing+Script:wght@400..700&display=swap');
+        </style>        
+    <link rel = "stylesheet" href="guessTheGame.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+</head>
+<body>
+    <header>
+        <h1 id="name_game">Guess the Number</h1>
+    </header>
+    <nav id="fixed_nav_menu">
+        <button id="button_nav_menu"></button> 
+        <div id="state">      
+            <h1>Nickname </h1>
+            <ul>
+                <li id ="stat_easy_level">Easy Level: 0</li>
+                <li id="stat_medium_level">Medium level: 0</li>
+                <li id="stat_hard_level">Hard level: 0</li>
+            </ul>           
+        </div>                           
+    </nav>
+    <main>
+        <section id="restart_frame">
+            <button id="restart_button">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.08331 8.33333V20.8333H14.5833" stroke="#012626" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M47.9167 41.6667V29.1667H35.4167" stroke="#012626" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M42.6875 18.75C41.6309 15.7641 39.8351 13.0946 37.4678 10.9905C35.1004 8.88632 32.2386 7.41618 29.1494 6.7172C26.0602 6.01823 22.8442 6.11321 19.8017 6.99328C16.7591 7.87335 13.989 9.50982 11.75 11.75L2.08331 20.8333M47.9166 29.1667L38.25 38.25C36.0109 40.4902 33.2409 42.1267 30.1983 43.0067C27.1557 43.8868 23.9398 43.9818 20.8506 43.2828C17.7614 42.5838 14.8996 41.1137 12.5322 39.0095C10.1648 36.9054 8.36908 34.2359 7.31248 31.25" stroke="#012626" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>                               
+        </section>
+        <div id="container_timer">
+            <section id="timer_frame">
+            </section>
+        </div>
+        <section id="start_button_frame">
+            <button id="start_button">Play</button>
+            <div id="user_number_input_background">
+                <input type="text" name="userNumber" placeholder="Enter number..." id="user_number_input">
+                <button id="send_user_number">
+                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="21" rx="10.5" fill="#04BFAD"/>
+                    <path d="M16.9377 5.05185C16.901 5.01781 16.8536 5 16.8058 5C16.7769 5 16.7481 5.00644 16.7209 5.01991L5.19162 10.7116C5.07378 10.7699 4.99921 10.891 5.00001 11.0235C5.00081 11.1558 5.07664 11.2761 5.19533 11.3331L8.23391 12.7902L14.3095 7.76452L8.98675 13.1512L12.7721 14.9664C12.8186 14.9888 12.8693 15 12.9196 15C12.9624 15 13.0049 14.9921 13.0453 14.9762C13.1334 14.9411 13.2035 14.8708 13.2385 14.7821L16.9863 5.26689C17.0159 5.19201 16.9966 5.1064 16.9377 5.05185Z" fill="#012626"/>
+                    <path d="M10 15.8877C10 15.9294 10.0487 15.9675 10.1262 15.987C10.2036 16.0064 10.2978 16.0039 10.3701 15.9804L12 15.4523L10 15V15.8877H10Z" fill="#012626"/>
+                    </svg>
+                </button>                    
+            </div>
+            </section>
+        <section id="number_row">
+            <div class="number_block" id="lateral_left_number_frame"></div>
+            <div class="number_block" id="left_number_frame"></div>
+            <div class="number_block" id="middle_number_frame"></div>
+            <div class="number_block" id="right_number_frame"></div>
+            <div class="number_block" id="lateral_right_number_frame"></div>
+        </section>
+        <section id="level_types">
+            <h1>Level: </h1>
+            <div id="easy_level" class="level_frame">Easy</div>
+            <div id="medium_level" class="level_frame">Medium</div>
+            <div id="hard_level" class="level_frame">Hard</div>
+        </section>
+    </main>
+    <script src = "guessTheGame.js"></script>
+</body>
+</html>
