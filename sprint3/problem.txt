@@ -1,0 +1,2 @@
+- history fix when we open moreMathAriph
+- when we click on the history with unic symbol, it`s copy to the input frame

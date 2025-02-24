@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="calculator.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <main>
+        <section id="calculator">
+            <section id="upper_frame_calculator">
+                <nav id="nav">
+                    <button class="mini_nav_button transparent_button" id="close"></button>
+                    <button class="mini_nav_button transparent_button" id="unfold"></button>
+                    <button class="mini_nav_button transparent_button" id="collapse"></button>
+                    <button class="transparent_button" id="history">
+                        <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line y1="1.4" x2="13" y2="1.4" stroke="white" stroke-width="1.2"/>
+                            <line y1="5.4" x2="13" y2="5.4" stroke="white" stroke-width="1.2"/>
+                            <line y1="9.4" x2="9" y2="9.4" stroke="white" stroke-width="1.2"/>
+                            </svg>                          
+                    </button>    
+                </nav>
+                <section id="input_frame">
+                    <div id="prev_action_block"></div>
+                    <input type="text" placeholder="..." id="output_result">
+                </section>
+                <section id="history_list"></section>
+            </section>
+            <section id="lower_frame_calculator">
+                <button class="default_button button_lower_frame" id="clear_input_field_button">AC</button>
+                <button class="default_button button_lower_frame arithmetic_symbol">%</button>
+                    <button class="default_button button_lower_frame arithmetic_symbol">+</button>
+                    
+                    <button id="sqrt_symbol" class="default_button button_lower_frame unic_arithmetic_symbol hidden_button">√</button>
+
+                    <button class="default_button button_lower_frame arithmetic_symbol">*</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">7</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">8</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">9</button>
+
+                    <button id="pow_symbol" class="default_button button_lower_frame unic_arithmetic_symbol hidden_button">²</button>
+
+                    <button class="default_button button_lower_frame arithmetic_symbol">/</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">4</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">5</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">6</button>
+
+                    <button class="default_button button_lower_frame arithmetic_symbol hidden_button">(</button>
+
+                    <button class="default_button button_lower_frame arithmetic_symbol">-</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">1</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">2</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">3</button>
+
+                    <button class="default_button button_lower_frame arithmetic_symbol hidden_button">)</button>
+
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">.</button>
+                    <button class="default_button number_button button_lower_frame arithmetic_symbol">0</button>
+                    <button class="default_button button_lower_frame" id="more_math_actions">
+                        <svg fill="#eee" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 141.293 141.293" xml:space="preserve" stroke="#eee"><g id="SVGReeepo_bgCarrieeer" strokeee-width="0"></g><g id="SVGReeepo_traceeerCarrieeer" strokeee-lineeecap="round" strokeee-lineeejoin="round"></g><g id="SVGReeepo_iconCarrieeer"> <g> <g> <path d="M77.955,109.975c-4.037,0-7.309,3.271-7.309,7.308c0,4.037,3.272,7.31,7.309,7.31h56.029c4.037,0,7.309-3.271,7.309-7.31 c0-4.036-3.271-7.308-7.309-7.308H77.955z"></path> <path d="M0,44.2c0,4.037,3.272,7.308,7.309,7.308h19.489v19.49c0,4.036,3.271,7.309,7.308,7.309c4.037,0,7.309-3.271,7.309-7.309 v-19.49H63.34c4.037,0,7.308-3.271,7.308-7.308c0-4.037-3.271-7.309-7.308-7.309H41.414V12.53c0-4.037-3.272-7.308-7.309-7.308 c-4.037,0-7.308,3.271-7.308,7.308v24.361H7.308C3.272,36.892,0,40.164,0,44.2z"></path> <path d="M131.428,17.261c-2.854-2.855-7.481-2.855-10.336,0L14.763,123.594c-2.853,2.854-2.853,7.481,0,10.334 c1.425,1.429,3.298,2.143,5.167,2.143c1.868,0,3.742-0.714,5.169-2.143L131.428,27.599 C134.283,24.746,134.283,20.114,131.428,17.261z"></path> </g> </g> </g></svg>
+                    </button>
+
+                    <button class="default_button button_lower_frame arithmetic_symbol hidden_button">|</button>
+                    
+                    <button class="bigger_button button_lower_frame" id="find_out_result_button">=</button>
+            </section>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>
