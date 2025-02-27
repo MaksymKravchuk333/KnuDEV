@@ -106,6 +106,7 @@ function moreMathActionsFunctionClose()
 {
     let historyBlocks = document.getElementsByClassName("history-item");
 
+
     for(historyBlock of historyBlocks)
     {
         historyBlock.style.width = "20rem";
@@ -142,6 +143,8 @@ function moreMathActionsFunctionOpen()
 {
 
     let historyBlocks = document.getElementsByClassName("history-item");
+
+    console.log("History items found:", historyBlocks.length); 
 
     for(historyBlock of historyBlocks)
     {
@@ -206,11 +209,11 @@ function createHistoryBlock(resultMessage, unicSymbol){
     const newHistoryBlock = document.createElement('h1');
     newHistoryBlock.id = "historyBlock_" + historyCount;
     newHistoryBlock.className = 'history-item';
-    if(unicSymbol == document.getElementById("pow_symbol").textContent)
+    if(unicSymbol.trim() == document.getElementById("pow_symbol").textContent)
     {
         newHistoryBlock.textContent = "(" + document.getElementById("output_result").value + ")" + unicSymbol + " = "+ resultMessage;    
     }
-    else if(unicSymbol == document.getElementById("sqrt_symbol").textContent)
+    else if(unicSymbol.trim() == document.getElementById("sqrt_symbol").textContent)
     {
         newHistoryBlock.textContent = unicSymbol + "(" + document.getElementById("output_result").value + ")" + " = "+ resultMessage;
     }
