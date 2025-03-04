@@ -7,6 +7,8 @@ let editAssigmentFrame = document.getElementById("edit_assigment_frame");
 let buttonEditDescription = document.getElementById("button_edit_description");
 let buttonEditAssigment = document.getElementById("button_edit_assigment");
 let deleteSelectedAssigment = document.getElementById("delete_selected_assigment");
+let closeAssigmentCreator = document.getElementById("close_assigment_creator");
+let logoAndName = document.getElementById("logo_and_name");
 
 let currentAssigment = null;
 let arrayAssigment = [];
@@ -37,6 +39,7 @@ class Assigment {
             document.getElementById("description_of_assigment_edit").value = newAssigment.getAttribute('data-description');
             currentAssigment = newAssigment;
             document.getElementById("info_container__edit_assigment_frame").style.display = "grid";
+            hideLogoAndName();
         });
         newAssigment.appendChild(textSpan);
         createMarkAssigment(newAssigment);
@@ -60,7 +63,8 @@ class Assigment {
             // second part of the function    
                 if(selectedAssigment.length > 0)deleteSelectedAssigment.style.display = "block"; // --> show delete button
                 else deleteSelectedAssigment.style.display = "none"; // --> hide delete button
-        
+            // third part of the function
+            
             });
         }
     }
@@ -69,6 +73,8 @@ class Assigment {
     
 }
 // event:
+
+closeAssigmentCreator.addEventListener("click", hideAssigmentCreatorMenu);
 
 deleteSelectedAssigment.addEventListener("click", () => { 
     let selectedAssigmentCopy = [...selectedAssigment];
@@ -94,13 +100,18 @@ deleteSelectedAssigment.addEventListener("click", () => {
         });
     });
 
+    // CLEAR EDIT FRAME
+    document.getElementById("name_of_assigment_edit").value = "";
+    document.getElementById("description_of_assigment_edit").value = "";
+    document.getElementById("info_container__edit_assigment_frame").style.display = "none";
+
     // Ховаємо кнопку видалення, якщо більше нічого не вибрано
     if (selectedAssigment.length === 0) {
         deleteSelectedAssigment.style.display = "none";
     }
 });
 
-buttonEditAssigment.addEventListener("click", edidAssigment);
+buttonEditAssigment.addEventListener("click", editAssigment);
 
 document.getElementById("button_edit_name").addEventListener("click", () => {
     document.getElementById("name_of_assigment_edit").style.pointerEvents = "auto";
@@ -114,15 +125,22 @@ openAssigmentCreator.addEventListener("click", assigmentCreatorClosed);
 
 buttonCreateAssignment.addEventListener("click", createAssigment);
 
-
-// for(let assigmentCheckbox of document.getElementsByClassName("custom-checkbox")) {
-//     assigmentCheckbox.addEventListener("change", function(event) {
-//         console.log(event.target.checked);
-//     });
-// }
-
-
 //function
+
+function appearLogoAndName()
+{
+    logoAndName.style.display = "grid";
+}
+
+function hideLogoAndName() {
+    logoAndName.style.display = "none";
+}
+
+function hideAssigmentCreatorMenu()
+{
+    assigmentCreatorMenu.style.display = "none";
+    openAssigmentCreator.style.display = "block";   
+}
 
 function deleteAssigment(someCheckbox) {
     console.log(someCheckbox.id.value);
@@ -141,13 +159,12 @@ function createAssigment() {
     arrayAssigment.push(newAssigment);
     newAssigment.addToList();
     counter++;
-    assigmentCreatorMenu.style.display = "none";
-    openAssigmentCreator.style.display = "block";
+
     document.getElementById("name_of_assigment").value = "";
     document.getElementById("description_of_assigment").value = "";
 }
 
-function edidAssigment(){
+function editAssigment(){
     if (currentAssigment) {
 
         if(document.getElementById("name_of_assigment_edit").value.trim() !== "") {
@@ -158,7 +175,8 @@ function edidAssigment(){
         document.getElementById("name_of_assigment_edit").value = "";
         document.getElementById("description_of_assigment_edit").value = "";
         document.getElementById("info_container__edit_assigment_frame").style.display = "none";
-        }else {
+        appearLogoAndName();
+    }else {
             alert("Enter the name of the assigment");
         }
     }  
