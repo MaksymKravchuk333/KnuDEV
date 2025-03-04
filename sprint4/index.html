@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <div id="lists_container">
+            <section class="action_list" id="action_list_background">
+                <ul id="list_of_assigment">
+                </ul>
+            </section>
+            
+            <section id="assigment_creator_menu">
+                <button id="close_assigment_creator"></button>
+                <h1>Name of assigment</h1>
+                <input maxlength="330" type="text" id="name_of_assigment">
+                <h2>Description of assigment</h2>
+                <textarea maxlength="330" id="description_of_assigment"></textarea>   
+                <button id="button_create_assigment">Create assigment</button>
+            </section>
+            <section id="action_list_menu">
+                <button id="delete_selected_assigment">-</button>
+                <button id="open_assigment_creator">+</button>
+            </section>
+            <section class="action_list" id="edit_assigment_frame">
+                <div id="info_container__edit_assigment_frame">
+                    <input type="text" id="name_of_assigment_edit">
+                    <button class="edit_button" id="button_edit_name">e</button>
+                    <textarea maxlength="330" id="description_of_assigment_edit"></textarea>
+                    <button class="edit_button" id="button_edit_description">e</button>
+                    <button id="button_edit_assigment">Edit assigment</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

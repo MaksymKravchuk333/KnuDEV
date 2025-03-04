@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(0.25turn , #37b3d5, #2acf9b);
+}
+header{
+    height: 5rem;
+    display: grid;
+    justify-content: center;
+}
+nav{
+    height: auto;
+    width: 70rem;
+}
+main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 28.5rem;
+}
+footer{
+
+    height: 10rem;
+}
+#lists_container{
+    display: grid;
+    grid-column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    grid-auto-flow: column;
+}
+.action_list{
+    border-radius: 0.4rem;
+    background-color: rgba(142, 225, 240, 0.4);
+    height: 22rem;
+    overflow-y: auto;
+    width: 26rem;
+    backdrop-filter: blur(0.5rem);
+    border: 0.1rem solid rgba(204, 234, 245, 0.2);
+}
+.action_list::-webkit-scrollbar{
+    height: 10rem;
+    width:none;
+    margin-right: 1rem;
+}
+.action_list::-webkit-scrollbar:hover{
+    width: 0.5rem;
+}
+.action_list::-webkit-scrollbar-track{
+    background-color: rgba(61, 162, 190, 0.5);
+    border-radius: 2rem;
+}
+.action_list::-webkit-scrollbar-thumb{
+    background-color: rgba(36, 110, 131, 0.5);
+    border-radius: 2rem;
+}
+#delete_selected_assigment{
+    display: none;
+    border-radius:50% ;
+    border: 0.1rem solid rgba(204, 234, 245, 0.2);
+    background-color: rgba(142, 225, 240, 0.4);
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 3;
+    font-size: 3rem;
+    font-weight: 100;
+    padding-bottom: 1rem;
+    align-items: center;
+    justify-self: center;
+    opacity: 0.8;
+    font-family: 'Times New Roman', Times, serif;
+    color:  rgba(233, 245, 250, 0.4);
+    outline: 0.1rem solid rgba(233, 245, 250, 0.4);
+}
+#delete_selected_assigment:hover{
+    transform: scale(1.05);
+}
+
+
+#action_list_menu{
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 1rem;
+    align-items: center;
+    justify-content:center;
+}
+
+#open_assigment_creator{
+    border-radius:50% ;
+    border: 0.1rem solid rgba(204, 234, 245, 0.2);
+    background-color: rgba(142, 225, 240, 0.4);
+    width: 6rem;
+    height: 6rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 3;
+    font-size: 5rem;
+    font-weight: 300;
+    opacity: 0.8;
+    font-family: 'Times New Roman', Times, serif;
+    color:  rgba(233, 245, 250, 0.4);
+    outline: 0.1rem solid rgba(233, 245, 250, 0.4);
+}
+#open_assigment_creator:hover{
+    transform: scale(1.05);
+}
+
+#list_of_assigment{
+    display: grid;
+    grid-auto-flow: row;
+    align-items: start;
+    margin: 1rem 0 0 1rem;
+    width: 90%;
+    grid-row-gap: 0.5rem;
+}
+
+.assigment{
+    background-color: rgba(61, 162, 190, 0.5);
+    border-radius: 2rem;
+    display: grid;
+    color: #eee;
+    height: 2.5rem;
+    padding-inline: 1rem;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    grid-column-gap: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.assigment:hover{
+    transform: scale(1.01);
+    background-color: rgba(73, 173, 201, 0.5) ;
+}
+#assigment_creator_menu
+{
+    border: 0.1rem solid rgba(204, 234, 245, 0.2);
+    background-color: rgba(142, 225, 240, 0.4);
+    position: absolute;
+    z-index: 2;
+    border-radius: 2rem;
+    display: none;
+    align-items: start;
+    justify-content: start;
+    width: 20rem;
+    height: 23rem;
+}
+#assigment_creator_menu h1, h2{
+    color: rgba(7, 112, 150, 0.9);
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-left: 0.8rem;
+}
+#assigment_creator_menu h1{
+    font-size: 1.6rem;
+}
+#close_assigment_creator{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: 0.2rem solid rgba(7, 112, 150, 0.5);
+    border-radius: 50%;
+    margin: 0.5rem 0 0 17.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+}
+#close_assigment_creator:hover{
+    transform: scale(1.05);
+    background-color: rgba(7, 112, 150, 0.2);
+}
+#name_of_assigment{
+    border-radius: 2rem;
+    height: 2rem;
+    width: 15rem;
+    margin: 0 0 0 0.8rem;
+    border: none;
+    background-color: rgba(33, 149, 169, 0.4);
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+    font-weight: 800;
+    color: rgba(7, 112, 150, 0.9);;
+    padding-inline: 0.4rem;
+}
+#description_of_assigment{
+    border-radius: 2rem;
+    border: none;
+    background-color: rgba(33, 149, 169, 0.4);
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+    color: rgba(7, 112, 150, 0.9);
+    margin: 0 0 0 0.8rem;
+    height: 10rem;
+    resize: none;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    font-weight: 800;
+    width: 16.5rem;
+}
+#button_create_assigment{
+    margin-block: 0.4rem;
+    margin-inline: 0.8rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    background-color: rgba(33, 149, 169, 0.4);
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+    color: rgba(204, 234, 245, 0.8);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 15rem;
+    cursor: pointer;
+    margin-inline: auto;
+    transition: 0.3s ease;
+}
+#button_create_assigment:hover{
+    background-color: rgba(33, 149, 169, 0.6);
+    transform: scale(1.05);
+    color: rgba(225, 242, 248, 0.9);
+}
+.custom-checkbox{
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0.15rem solid #eee; 
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s ease;
+}
+.custom-checkbox:checked {
+    background-color: rgba(188, 233, 248, 0.8);
+}
+#info_container__edit_assigment_frame{
+    display: none;
+    margin: 1rem;
+    grid-template-areas: 
+    "name_of_assigment_edit button_edit_name"
+    "description_of_assigment_edit button_edit_description";
+    grid-row-gap: 0.7rem;
+    grid-column-gap: 0.4rem;
+}
+#name_of_assigment_edit{
+    grid-area: name_of_assigment_edit;
+    width: 20rem;
+    height: 3.5rem;
+    border-radius: 0.8rem;
+    border: none;
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+    background-color: rgba(33, 149, 169, 0.3);
+    padding-inline: 0.5rem;
+    color: #eee;
+    font-size: 1.3rem;
+    font-weight: 800;
+    pointer-events: none;
+}
+#button_edit_name{
+    grid-area: button_edit_name;
+}
+.edit_button{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+    background-color: rgba(33, 149, 169, 0.3);
+    color:rgba(250, 254, 255, 0.6);
+    font-weight: 700;
+    transition:0.3s ease ;
+}
+.edit_button:hover{
+    transform: scale(1.05);
+
+}
+#description_of_assigment_edit{
+    height: 12rem;
+    border: none;
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+    background-color: rgba(33, 149, 169, 0.3);
+    border-radius: 0.8rem;
+    padding-inline: 0.5rem;
+    color: #eee;
+    font-weight: 800;
+    padding-block: 0.5rem;
+    grid-area: description_of_assigment_edit;
+    pointer-events: none;
+    resize: none;
+}
+#button_edit_description{
+    grid-area: button_edit_description;
+}
+#button_edit_assigment{
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 2rem;
+    margin-left: auto;
+    border: none;
+    outline: 0.1rem solid rgba(204, 234, 245, 0.2);
+    background-color: rgba(33, 149, 169, 0.3);
+    color: #eee;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#button_edit_assigment:hover{
+    background-color: rgba(33, 149, 169, 0.5);
+    transform: scale(1.05);
+    color: rgba(250, 254, 255, 0.9);
+}
