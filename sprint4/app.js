@@ -8,8 +8,9 @@ let buttonEditDescription = document.getElementById("button_edit_description");
 let buttonEditAssigment = document.getElementById("button_edit_assigment");
 let deleteSelectedAssigment = document.getElementById("delete_selected_assigment");
 let closeAssigmentCreator = document.getElementById("close_assigment_creator");
-let logoAndName = document.getElementById("logo_and_name");
 
+let logoAndNameRight = document.getElementById("logo_and_name_right");
+let logoAndNameLeft = document.getElementById("logo_and_name_left");
 let currentAssigment = null;
 let arrayAssigment = [];
 let arrayAssigmentId = [];
@@ -39,7 +40,7 @@ class Assigment {
             document.getElementById("description_of_assigment_edit").value = newAssigment.getAttribute('data-description');
             currentAssigment = newAssigment;
             document.getElementById("info_container__edit_assigment_frame").style.display = "grid";
-            hideLogoAndName();
+            hideLogoAndNameRight();
         });
         newAssigment.appendChild(textSpan);
         createMarkAssigment(newAssigment);
@@ -93,10 +94,15 @@ deleteSelectedAssigment.addEventListener("click", () => {
                 element.remove();
             }
 
-            // Видаляємо з масивів
+            
             arrayAssigmentId = arrayAssigmentId.filter(id => id !== assigmentId);
             arrayAssigment = arrayAssigment.filter(a => a.id !== assigmentId);
             selectedAssigment = selectedAssigment.filter(id => id !== markId);
+
+
+            if(arrayAssigmentId.length === 0)appearLogoAndNameLeft();
+
+            appearLogoAndNameRight();
         });
     });
 
@@ -127,13 +133,21 @@ buttonCreateAssignment.addEventListener("click", createAssigment);
 
 //function
 
-function appearLogoAndName()
+function appearLogoAndNameRight()
 {
-    logoAndName.style.display = "grid";
+    logoAndNameRight.style.display = "grid";
 }
 
-function hideLogoAndName() {
-    logoAndName.style.display = "none";
+function hideLogoAndNameRight() {
+    logoAndNameRight.style.display = "none";
+}
+function appearLogoAndNameLeft()
+{
+    logoAndNameLeft.style.display = "grid";
+}
+
+function hideLogoAndNameLeft() {
+    logoAndNameLeft.style.display = "none";
 }
 
 function hideAssigmentCreatorMenu()
@@ -142,9 +156,6 @@ function hideAssigmentCreatorMenu()
     openAssigmentCreator.style.display = "block";   
 }
 
-function deleteAssigment(someCheckbox) {
-    console.log(someCheckbox.id.value);
-}
 
 function createAssigment() {
     let name = document.getElementById("name_of_assigment").value;
@@ -160,6 +171,8 @@ function createAssigment() {
     newAssigment.addToList();
     counter++;
 
+    hideLogoAndNameLeft();
+    
     document.getElementById("name_of_assigment").value = "";
     document.getElementById("description_of_assigment").value = "";
 }
@@ -175,7 +188,7 @@ function editAssigment(){
         document.getElementById("name_of_assigment_edit").value = "";
         document.getElementById("description_of_assigment_edit").value = "";
         document.getElementById("info_container__edit_assigment_frame").style.display = "none";
-        appearLogoAndName();
+        appearLogoAndNameRight();
     }else {
             alert("Enter the name of the assigment");
         }

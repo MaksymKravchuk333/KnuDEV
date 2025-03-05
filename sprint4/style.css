@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+    color: #0a5137cc;  
+}
+
 body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow: hidden;
@@ -72,6 +77,12 @@ footer ul{
     align-items: center;
     justify-content: start;
     list-style: none;
+}
+#links li > a{
+    transition: 0.3s ease;
+}
+#links li > a:hover{
+    transform: scale(1.05);
 }
 #lists_container{
     display: grid;
@@ -167,6 +178,8 @@ footer ul{
     grid-column-gap: 0.5rem;
     cursor: pointer;
     transition: 0.3s ease;
+    width: 22rem;
+    padding-right: -2rem;
 }
 .assigment:hover{
     transform: scale(1.01);
@@ -186,19 +199,19 @@ footer ul{
     width: 20rem;
     height: 23rem;
 }
-.assigment_creator_menu::-webkit-scrollbar{
+#action_list_background{
+    overflow-y: auto;
+}
+#action_list_background::-webkit-scrollbar{
     height: 10rem;
-    width:none;
+    width: 0.8rem;
     margin-right: 1rem;
 }
-.assigment_creator_menu::-webkit-scrollbar:hover{
-    width: 0.5rem;
-}
-.assigment_creator_menu::-webkit-scrollbar-track{
+#action_list_background::-webkit-scrollbar-track{
     background-color: rgba(61, 162, 190, 0.5);
     border-radius: 2rem;
 }
-.assigment_creator_menu::-webkit-scrollbar-thumb{
+#action_list_background::-webkit-scrollbar-thumb{
     background-color: rgba(36, 110, 131, 0.5);
     border-radius: 2rem;
 }
@@ -365,7 +378,28 @@ footer ul{
     transform: scale(1.05);
     color: rgba(250, 254, 255, 0.9);
 }
-#logo_and_name{
+#logo_and_name_left{
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    margin-top: 4.35rem;
+    grid-row-gap: 0.5rem;
+    margin-left: 3rem;
+}
+#logo_and_name_left h1 {
+    color:rgba(11, 87, 71, 0.7);
+    font-size: 1.8rem;
+    font-family: 'Lobster', sans-serif;
+    font-weight: 500;
+}
+#logo_and_name_left img{
+    width: 10rem;
+    height: 10rem;
+    margin-left: 1.2rem;
+}
+#logo_and_name_right{
     display: grid;
     grid-auto-flow: row;
     align-items: center;
@@ -374,16 +408,16 @@ footer ul{
     margin-bottom: 0.5rem;
     grid-row-gap: 0.5rem;
 }
-#logo_and_name h1 {
+#logo_and_name_right h1 {
     color:rgba(11, 87, 71, 0.7);
     font-size: 1.8rem;
     font-family: 'Lobster', sans-serif;
     font-weight: 500;
 }
-#logo_and_name img{
+#logo_and_name_right img{
     width: 10rem;
     height: 10rem;
-    margin-left: 1.5rem;
+    margin-left: 1.2rem;
 }
 #edit_assigment_frame{
     display: grid;
