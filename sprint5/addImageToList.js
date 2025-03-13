@@ -3,6 +3,7 @@ let counter = 0;
 function startAddImageToListFunction(){
     let buttonAddImage = document.getElementById("add-image");
     buttonAddImage.addEventListener("change", addImageToList);
+    
 }
 function addImageToList(event) {
     console.log(event.target.files[0]);
@@ -35,8 +36,13 @@ function addImageToList(event) {
 
         startDeployedImageFunction();
         changeButtonAddImage();
+
+        if(arrayImages.length > 4){
+            scrollImage();
+        }   
+
         counter++;
-    }
+        }
     else
     {
         console.log("Not image");
@@ -46,8 +52,10 @@ function changeButtonAddImage(){
     document.getElementById("add-image-button").style.width = "5rem";
     document.getElementById("add-image-button").style.height = "5rem";
     document.getElementById("add-image-button").style.fontSize = "2.5rem";
-    document.getElementById("add-image-button").style.marginTop = "7rem";
+    document.getElementById("add-image-button").style.top = "67%";
+    document.getElementById("add-image-button").style.right = "47%";
     
         
 }
+
 startAddImageToListFunction();

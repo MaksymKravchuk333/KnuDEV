@@ -31,6 +31,9 @@ main{
     list-style: none;
     justify-content: center;
     align-self: center;
+    overflow-x: auto;
+    height: 21rem;
+    margin-inline: 2rem;
 }
 .image-list li{
     display: grid;
@@ -99,6 +102,9 @@ main{
     transform: scale(1.15);
 }
 .add_image_button{
+    user-select: none;
+    right: 45%;
+    position: absolute;
     text-align: center;
     align-items: center;
     width: 10rem;
@@ -122,3 +128,13 @@ main{
 .input_add_image_button{
     display: none;
 }
+.moving-arrow-button{
+    position: absolute;
+    width: 4rem;
+    height: 7rem;
+    border-radius: 1rem;
+    background-color: bisque;
+}
+/* #right-moving-arrow-button{
+    
+} */
